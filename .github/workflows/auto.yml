@@ -2,7 +2,7 @@ name: Auto
 
 on:
   schedule:
-    - cron: "30 22 * * *" # 北京时间上午06:30
+    - cron: "30 20 * * *" # 北京时间上午04:30
   workflow_dispatch:
 
 env:
@@ -24,13 +24,14 @@ jobs:
   CheckIn:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
       - name: Run Project
         run: |
           cd workflows
           yarn
           yarn checkin
+      - uses: gautamkrishnar/keepalive-workflow@master
 
 #  SeaGold:
 #    needs: CheckIn
