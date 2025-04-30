@@ -31,7 +31,6 @@ jobs:
           cd workflows
           yarn
           yarn checkin
-      - uses: gautamkrishnar/keepalive-workflow@master
 
 #  SeaGold:
 #    needs: CheckIn
